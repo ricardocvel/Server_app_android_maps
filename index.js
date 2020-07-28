@@ -3,8 +3,7 @@ const app = express();
 
 
 app.get('/', (request, response) => {
-    return response.sendStatus('Hello Word');
-
+    return response.json({message: 'Hello Word'});
 });
 
 app.listen(3333);
