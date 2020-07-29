@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Dev = require('../models/Dev');
+const parseStringAsArray = require('../utils/ParseStringsAsArray')
 
 // index, show, update, destroy
 
@@ -28,7 +29,7 @@ module.exports = {
             bio = naobio;
         }
     
-        const techsArray = techs.split(',').map(tech => tech.trim());
+        const techsArray = parseStringAsArray(techs);
     
         const location = {
             type: 'Point',
