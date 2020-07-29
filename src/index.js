@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./rotes');
+
 const app = express();
 
 mongoose.connect('mongodb+srv://oministack:Abc12345@cluster0.yheu5.mongodb.net/week10?retryWrites=true&w=majority',
@@ -10,6 +12,9 @@ mongoose.connect('mongodb+srv://oministack:Abc12345@cluster0.yheu5.mongodb.net/w
 );
 
 app.use(express.json());
+app.use(routes);
+
+app.listen(3333);
 
 
 //Metodos  HTTP: get, post, put, delete
@@ -21,10 +26,3 @@ app.use(express.json());
 // Body:
 
 // MongoDB ( Não Relacional)
-
-app.post('/users/:id', (request, response) => {
-    console.log(request.body);
-    return response.json({message: 'teste'});
-});
-
-app.listen(3333);
