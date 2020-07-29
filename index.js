@@ -1,8 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 
-app.use(express.json())
+mongoose.connect('mongodb+srv://oministack:Abc12345@cluster0.yheu5.mongodb.net/week10?retryWrites=true&w=majority',
+    {
+     useNewUrlParser: true ,
+     useUnifiedTopology: true,
+    }
+);
 
+app.use(express.json());
 
 
 //Metodos  HTTP: get, post, put, delete
