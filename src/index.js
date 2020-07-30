@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./rotes');
+const cors = require('cors');
 
 const app = express();
 
@@ -10,6 +11,8 @@ mongoose.connect('mongodb+srv://oministack:Abc12345@cluster0.yheu5.mongodb.net/w
      useUnifiedTopology: true,
     }
 );
+
+app.use(cors());
 
 app.use(express.json());
 app.use(routes);
@@ -26,3 +29,5 @@ app.listen(3333);
 // Body:
 
 // MongoDB ( Não Relacional)
+// adicionado cors
+
