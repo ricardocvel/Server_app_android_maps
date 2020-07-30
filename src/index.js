@@ -26,3 +26,4 @@ app.listen(3333);
 // Body:
 
 // MongoDB ( Não Relacional)
+// adicionado cors
